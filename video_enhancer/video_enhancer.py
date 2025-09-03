@@ -9,7 +9,7 @@ from moviepy import *
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Video Related Parameters
-scale = 4
+scale = 1
 video_folder_path = 'private/videos'
 enhanced_video_folder_path = 'public/videos'
 model_path = 'video_enhancer/model/ESPCN_x4.pb'  # Path to the super-resolution model
@@ -134,7 +134,7 @@ def process_video(input_video_path, reel_number):
             # enhanced_frame = sharpen_image(enhanced_frame)
             enhanced_frame = adjust_contrast(enhanced_frame)
             enhanced_frame = enhance_color(enhanced_frame)
-            enhanced_frame = enhance_video_frame(enhanced_frame)
+            # enhanced_frame = enhance_video_frame(enhanced_frame)
 
             # Write the enhanced, cropped frame
             out.write(enhanced_frame)
