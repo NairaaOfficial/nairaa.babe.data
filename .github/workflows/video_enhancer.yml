@@ -28,7 +28,7 @@ jobs:
         run: |
           VIDEO_NUMBER=$(cat counter.txt)
           echo "Setting sparse-checkout for Video_${VIDEO_NUMBER}.mp4"
-          echo "private/Video_${VIDEO_NUMBER}.mp4" >> .git/info/sparse-checkout
+          echo "private/videos/Video_${VIDEO_NUMBER}.mp4" >> .git/info/sparse-checkout
           git sparse-checkout reapply
 
       # Set up Python environment
