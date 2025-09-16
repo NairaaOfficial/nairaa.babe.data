@@ -7,7 +7,7 @@ from BSRGAN.utils import utils_image as util
 # Load the pretrained BSRGAN model
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 model_bsrgan = RRDBNet(3, 3, 64, 23, gc=32)
-model_bsrgan.load_state_dict(torch.load('VIDEO_EDITING_QUALITY/BSRGAN/model_zoo/BSRGAN.pth'), strict=True)
+model_bsrgan.load_state_dict(torch.load('video_enhancer_quality/BSRGAN/model_zoo/BSRGAN.pth'), strict=True)
 model_bsrgan.eval()
 model_bsrgan = model_bsrgan.to(device)
 
