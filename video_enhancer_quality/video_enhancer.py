@@ -10,6 +10,7 @@ from BSRGAN.bsrgan_quality_gpu import enhance_frame_bsrgan
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Video Related Parameters
+scale = 4
 video_folder_path = 'private/videos'
 enhanced_video_folder_path = 'public/videos'
 # Text/csv related parameters
@@ -137,7 +138,7 @@ def process_video(input_video_path, reel_number):
 
         fps = cap.get(cv2.CAP_PROP_FPS)
         x, y, w, h = detected_x, detected_y, detected_w, detected_h
-        out = cv2.VideoWriter(cropped_video_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w * 4, h * 4))
+        out = cv2.VideoWriter(cropped_video_path, cv2.VideoWriter_fourcc(*'mp4v'), fps, (w * scale, h * scale))
         total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
         print(f"Total frames to process: {total_frames}")
         count = 0
