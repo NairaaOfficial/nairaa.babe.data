@@ -73,7 +73,7 @@ def clean_up_files(*files):
 def process_video(input_video_path, reel_number):
     cropped_video_path = os.path.join(enhanced_video_folder_path, f'cropped_video_no_audio_{reel_number}.mp4')
     cropped_video_with_audio_path = os.path.join(enhanced_video_folder_path, f'cropped_video_{reel_number}.mp4')
-    enhanced_output_path = os.path.join(enhanced_video_folder_path, f'check_720_{reel_number}.mp4')
+    enhanced_output_path = os.path.join(enhanced_video_folder_path, f'Video_{reel_number}.mp4')
 
     def add_audio_to_video(input_path, output_path):
         with VideoFileClip(input_video_path) as original_clip, VideoFileClip(input_path) as cropped_clip:
