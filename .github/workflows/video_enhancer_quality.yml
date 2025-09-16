@@ -59,12 +59,11 @@ jobs:
         run: |
           mkdir -p kaggle-dataset
           cp -r video_enhancer_quality kaggle-dataset/ || true
-          cp -r public/videos kaggle-dataset/public/videos || true
           cp counter.txt kaggle-dataset/ || true
           cp requirements.txt kaggle-dataset/ || true
           cp ipnby/quality.ipynb kaggle-dataset/ || true
-
-          # Include the sparse-checked video file
+          
+          cp "public/videos/test.mp4" kaggle-dataset/public/videos/ || echo "⚠️ test.mp4 not found"
           VIDEO_NUMBER=$(cat counter.txt)
           mkdir -p kaggle-dataset/private/videos
           cp "private/videos/Video_${VIDEO_NUMBER}.mp4" kaggle-dataset/private/videos/ || echo "⚠️ Video file not found: private/videos/Video_${VIDEO_NUMBER}.mp4"
