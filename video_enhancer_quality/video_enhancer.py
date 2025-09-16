@@ -101,7 +101,7 @@ def process_video(input_video_path, reel_number):
                 bitrate="10M",  # Constrained high bitrate for Instagram compatibility
                 fps=fps,
                 ffmpeg_params=[
-                    "-crf", "14",  # Near visually lossless, but not overly large
+                    "-crf", "18",  # Near visually lossless, but not overly large
                     "-preset", "veryslow",  # Balanced compression speed vs. quality
                     "-pix_fmt", "yuv420p",  # Required by Instagram
                     "-g", str(int(fps * 2)),  # GOP length = 2 seconds
@@ -149,9 +149,9 @@ def process_video(input_video_path, reel_number):
             # Crop the frame using the detected area
             enhanced_frame = frame[y:y + h, x:x + w]
             # Apply enhancements: sharpening, contrast, and color enhancement
-            enhanced_frame = sharpen_image(enhanced_frame)
-            enhanced_frame = adjust_contrast(enhanced_frame)
-            enhanced_frame = enhance_color(enhanced_frame)
+            # enhanced_frame = sharpen_image(enhanced_frame)
+            # enhanced_frame = adjust_contrast(enhanced_frame)
+            # enhanced_frame = enhance_color(enhanced_frame)
             enhanced_frame = enhance_frame_bsrgan(enhanced_frame, False)
             print(f"Processing frame {count}")
             # Write the enhanced, cropped frame
