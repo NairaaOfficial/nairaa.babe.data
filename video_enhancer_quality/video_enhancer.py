@@ -161,7 +161,7 @@ def process_video(input_video_path, reel_number):
         cap.release()
         if out:
             out.release()
-            add_audio_to_video(cropped_video_path, cropped_video_with_audio_path)
+            add_audio_to_video_2k(cropped_video_path, cropped_video_with_audio_path)
     
     # Step 1 - Crop the Video Out
     enhance_video()
