@@ -59,7 +59,7 @@ jobs:
         run: |
           mkdir -p kaggle-dataset
           cp -r video_enhancer_quality kaggle-dataset/ || true
-          cp -r public/videos kaggle-dataset/public || true
+          cp -r public/videos kaggle-dataset/public/videos || true
           cp counter.txt kaggle-dataset/ || true
           cp requirements.txt kaggle-dataset/ || true
           cp ipnby/quality.ipynb kaggle-dataset/ || true
