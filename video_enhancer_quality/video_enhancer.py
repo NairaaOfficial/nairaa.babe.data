@@ -98,10 +98,10 @@ def process_video(input_video_path, reel_number):
                 codec="libx264",
                 audio_codec="aac",
                 audio_bitrate="256k",
-                bitrate="10M",  # Constrained high bitrate for Instagram compatibility
+                bitrate="7M",  # Constrained high bitrate for Instagram compatibility
                 fps=fps,
                 ffmpeg_params=[
-                    "-crf", "18",  # Near visually lossless, but not overly large
+                    "-crf", "14",  # Near visually lossless, but not overly large
                     "-preset", "veryslow",  # Balanced compression speed vs. quality
                     "-pix_fmt", "yuv420p",  # Required by Instagram
                     "-g", str(int(fps * 2)),  # GOP length = 2 seconds
