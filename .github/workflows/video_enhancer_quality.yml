@@ -82,7 +82,7 @@ jobs:
       - name: Create or Update Kaggle Dataset
         run: |
           for i in $(seq 1 5); do
-            if kaggle datasets status ${{ secrets.KAGGLE_USERNAME }}/video-editing-data >/dev/null 2>&1; then
+            if kaggle datasets status ${{ secrets.KAGGLE_USERNAME }}/video-enhancing-data >/dev/null 2>&1; then
               echo "✅ Dataset exists, versioning... (Attempt $i)"
               if kaggle datasets version -p kaggle-dataset -m "Update dataset for run" --dir-mode zip; then
                 echo "✅ Versioning successful"
